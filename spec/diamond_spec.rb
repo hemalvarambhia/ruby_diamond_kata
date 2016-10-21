@@ -20,6 +20,10 @@ describe 'Generating a diamond' do
   end
 
   describe 'the left-hand corner' do
+    context "given the letter 'A'" do
+      it 'is correctly printed'
+    end
+
     context "given the letter 'B'" do
       it 'is printed correctly'
     end
