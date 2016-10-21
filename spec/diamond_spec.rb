@@ -9,5 +9,7 @@ describe 'Generating a diamond' do
 
   context "given the letter 'B'" do
     it 'correctly prints the left-hand side'
+
+    it 'correctly prints the right-hand side'
   end
 end
