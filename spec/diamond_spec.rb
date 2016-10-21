@@ -20,6 +20,10 @@ describe 'Generating a diamond' do
   end
 
   describe 'the left-hand corner' do
+    context 'given no letter' do
+      it 'prints no left-hand corner'
+    end
+
     context "given the letter 'A'" do
       def left_hand_corner letter
         ['A']
