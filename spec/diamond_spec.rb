@@ -1,5 +1,5 @@
 describe 'Generating a diamond' do
-  it 'adds 1 + 1' do
-    expect(1 + 1).to eq 2
+  context 'when no letter is given' do
+    it 'prints no diamond'
   end
 end
