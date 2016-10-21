@@ -20,25 +20,26 @@ describe 'Generating a diamond' do
   end
 
   describe 'the left-hand corner' do
+    def left_hand_corner letter
+      case letter
+        when 'A'
+          ['A']
+        when 'B'
+          [[' ', 'A', ' '], ['B', ' ', ' ']]
+      end
+    end
+
     context 'given no letter' do
       it 'prints no left-hand corner'
     end
 
     context "given the letter 'A'" do
-      def left_hand_corner letter
-        ['A']
-      end
-
       it 'is correctly printed' do
         expect(left_hand_corner 'A').to eq ['A']
       end
     end
 
     context "given the letter 'B'" do
-      def left_hand_corner letter
-        [[' ', 'A', ' '], ['B', ' ', ' ']]
-      end
-
       it 'is printed correctly' do
         expect(left_hand_corner 'B').to eq [[' ', 'A', ' '], ['B', ' ', ' ']]
       end
