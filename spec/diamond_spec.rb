@@ -11,5 +11,7 @@ describe 'Generating a diamond' do
     it 'correctly prints the top left-hand corner'
 
     it 'correctly prints the top right-hand corner'
+
+    it 'correctly prints the bottom left-hand corner'
   end
 end
