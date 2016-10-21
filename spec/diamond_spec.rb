@@ -19,15 +19,17 @@ describe 'Generating a diamond' do
     end
   end
 
-  context "given the letter 'B'" do
-    it 'correctly prints the top left-hand corner'
-  end
+  describe 'the left-hand corner' do
+    context "given the letter 'B'" do
+      it 'is printed correctly'
+    end
 
-  context "given the letter 'C'" do
-    it 'correctly prints the top left-hand corner'
-  end
+    context "given the letter 'C'" do
+      it 'is printed correctly'
+    end
 
-  context "given the letter 'D'" do
-    it 'correctly prints the top left-hand corner'
+    context "given the letter 'D'" do
+      it 'is printed correctly'
+    end
   end
 end
