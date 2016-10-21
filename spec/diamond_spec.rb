@@ -31,7 +31,13 @@ describe 'Generating a diamond' do
     end
 
     context "given the letter 'B'" do
-      it 'is printed correctly'
+      def left_hand_corner letter
+        [[' ', 'A', ' '], ['B', ' ', ' ']]
+      end
+
+      it 'is printed correctly' do
+        expect(left_hand_corner 'B').to eq [[' ', 'A', ' '], ['B', ' ', ' ']]
+      end
     end
 
     context "given the letter 'C'" do
