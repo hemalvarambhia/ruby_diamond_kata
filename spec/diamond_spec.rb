@@ -16,4 +16,8 @@ describe 'Generating a diamond' do
 
     it 'correctly prints the bottom right-hand corner'
   end
+
+  context "given the letter 'C'" do
+    it 'correctly prints the top left-hand corner'
+  end
 end
