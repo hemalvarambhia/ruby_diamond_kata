@@ -10,7 +10,13 @@ describe 'Generating a diamond' do
   end
 
   context "given the letter 'A'" do
-    it 'prints the diamond correctly'
+    def diamond letter
+      'A'
+    end
+
+    it 'prints the diamond correctly' do
+      expect(diamond 'A').to eq 'A'
+    end
   end
 
   context "given the letter 'B'" do
