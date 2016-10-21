@@ -21,7 +21,13 @@ describe 'Generating a diamond' do
 
   describe 'the left-hand corner' do
     context "given the letter 'A'" do
-      it 'is correctly printed'
+      def left_hand_corner letter
+        ['A']
+      end
+
+      it 'is correctly printed' do
+        expect(left_hand_corner 'A').to eq ['A']
+      end
     end
 
     context "given the letter 'B'" do
