@@ -1,6 +1,12 @@
 describe 'Generating a diamond' do
   context 'when no letter is given' do
-    it 'prints no diamond'
+    def diamond letter
+      ''
+    end
+
+    it 'prints no diamond' do
+      expect(diamond '').to eq ''
+    end
   end
 
   context "given the letter 'A'" do
