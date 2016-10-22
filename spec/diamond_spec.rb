@@ -21,26 +21,27 @@ describe 'Generating a diamond' do
 
   describe 'the left-hand corner' do
     def left_hand_corner letter
+      range = 'A'..letter
       case letter
       when ''
         []
       when 'A'
         left_hand_corner = Array.new(1) { [' '] * 1 }
-        ('A'..'A').each_with_index do |letter, index|
+        range.each_with_index do |letter, index|
           left_hand_corner[index][0 - index] = letter
         end
 
         left_hand_corner
       when 'B'
         left_hand_corner = Array.new(2) { [' '] * 3 }
-        ('A'..'B').each_with_index do |letter, index|
+        range.each_with_index do |letter, index|
           left_hand_corner[index][1 - index] = letter
         end
 
         left_hand_corner
       when 'C'
         left_hand_corner = Array.new(3) { [' '] * 5 }
-        ('A'..'C').each_with_index do |letter, index|
+        range.each_with_index do |letter, index|
           left_hand_corner[index][2 - index] = letter
         end
         
