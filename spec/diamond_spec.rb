@@ -30,19 +30,19 @@ describe 'Generating a diamond' do
         []
       when 'A'
         range.each_with_index do |letter, index|
-          left_hand_corner[index][0 - index] = letter
+          left_hand_corner[index][(range.count - 1) - index] = letter
         end
 
         left_hand_corner
       when 'B'
         range.each_with_index do |letter, index|
-          left_hand_corner[index][1 - index] = letter
+          left_hand_corner[index][(range.count - 1) - index] = letter
         end
 
         left_hand_corner
       when 'C'
         range.each_with_index do |letter, index|
-          left_hand_corner[index][2 - index] = letter
+          left_hand_corner[index][(range.count - 1) - index] = letter
         end
         
         left_hand_corner
