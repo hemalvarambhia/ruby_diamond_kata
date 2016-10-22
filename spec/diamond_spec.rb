@@ -29,11 +29,12 @@ describe 'Generating a diamond' do
       when 'B'
         [[' ', 'A', ' '], ['B', ' ', ' ']]
       when 'C'
-        [
-          [' ', ' ', 'A', ' ', ' '],
-          [' ', 'B', ' ', ' ', ' '],
-          ['C', ' ', ' ', ' ', ' '] 
-        ]
+        left_hand_corner = Array.new(3) { [' '] * 5 }
+        ('A'..'C').each_with_index do |letter, index|
+          left_hand_corner[index][2 - index] = letter
+        end
+        
+        left_hand_corner
       end
     end
 
