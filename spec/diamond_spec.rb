@@ -22,15 +22,19 @@ describe 'Generating a diamond' do
   describe 'the left-hand corner' do
     def left_hand_corner letter
       case letter
-        when 'A'
-          ['A']
-        when 'B'
-          [[' ', 'A', ' '], ['B', ' ', ' ']]
+      when ''
+        []
+      when 'A'
+        ['A']
+      when 'B'
+        [[' ', 'A', ' '], ['B', ' ', ' ']]
       end
     end
 
     context 'given no letter' do
-      it 'prints no left-hand corner'
+      it 'prints no left-hand corner' do
+        expect(left_hand_corner '').to eq []
+      end
     end
 
     context "given the letter 'A'" do
