@@ -72,7 +72,17 @@ describe 'Generating a diamond' do
     end
 
     context "given the letter 'D'" do
-      it 'is printed correctly'
+      it 'is printed correctly' do
+        expect(left_hand_corner 'D').to(
+          eq([
+               [' ', ' ', ' ', 'A', ' ', ' ', ' '],
+               [' ', ' ', 'B', ' ', ' ', ' ', ' '],
+               [' ', 'C', ' ', ' ', ' ', ' ', ' '],
+               ['D', ' ', ' ', ' ', ' ', ' ', ' ']
+             ]
+          )
+        )
+      end
     end
   end
 end
