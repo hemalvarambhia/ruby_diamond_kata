@@ -21,32 +21,17 @@ describe 'Generating a diamond' do
 
   describe 'the left-hand corner' do
     def left_hand_corner letter
+      return [] if letter.empty?
+      
       range = 'A'..letter
       left_hand_corner =
         Array.new(range.count) {  [' '] * (2 *range.count - 1) }
 
-      case letter
-      when ''
-        []
-      when 'A'
-        range.each_with_index do |letter, index|
-          left_hand_corner[index][(range.count - 1) - index] = letter
-        end
-
-        left_hand_corner
-      when 'B'
-        range.each_with_index do |letter, index|
-          left_hand_corner[index][(range.count - 1) - index] = letter
-        end
-
-        left_hand_corner
-      when 'C'
-        range.each_with_index do |letter, index|
-          left_hand_corner[index][(range.count - 1) - index] = letter
-        end
-        
-        left_hand_corner
+      range.each_with_index do |letter, index|
+        left_hand_corner[index][(range.count - 1) - index] = letter
       end
+
+      left_hand_corner
     end
 
     context 'given no letter' do
