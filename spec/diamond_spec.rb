@@ -26,21 +26,27 @@ describe 'Generating a diamond' do
       when ''
         []
       when 'A'
-        left_hand_corner = Array.new(range.count) { [' '] * 1 }
+        left_hand_corner = Array.new(range.count) do
+          [' '] * (2 *range.count - 1)
+        end
         range.each_with_index do |letter, index|
           left_hand_corner[index][0 - index] = letter
         end
 
         left_hand_corner
       when 'B'
-        left_hand_corner = Array.new(range.count) { [' '] * 3 }
+        left_hand_corner = Array.new(range.count) do
+          [' '] * (2 * range.count - 1)
+        end
         range.each_with_index do |letter, index|
           left_hand_corner[index][1 - index] = letter
         end
 
         left_hand_corner
       when 'C'
-        left_hand_corner = Array.new(range.count) { [' '] * 5 }
+        left_hand_corner = Array.new(range.count) do
+          [' '] * (2 * range.count - 1)
+        end
         range.each_with_index do |letter, index|
           left_hand_corner[index][2 - index] = letter
         end
