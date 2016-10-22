@@ -28,6 +28,12 @@ describe 'Generating a diamond' do
         ['A']
       when 'B'
         [[' ', 'A', ' '], ['B', ' ', ' ']]
+      when 'C'
+        [
+          [' ', ' ', 'A', ' ', ' '],
+          [' ', 'B', ' ', ' ', ' '],
+          ['C', ' ', ' ', ' ', ' '] 
+        ]
       end
     end
 
@@ -50,7 +56,16 @@ describe 'Generating a diamond' do
     end
 
     context "given the letter 'C'" do
-      it 'is printed correctly'
+      it 'is printed correctly' do
+        expect(left_hand_corner 'C').to(
+          eq([
+               [' ', ' ', 'A', ' ', ' '],
+               [' ', 'B', ' ', ' ', ' '],
+               ['C', ' ', ' ', ' ', ' ']
+             ]
+          )
+        )
+      end
     end
 
     context "given the letter 'D'" do
