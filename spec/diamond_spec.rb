@@ -25,7 +25,7 @@ describe 'Generating a diamond' do
       when ''
         []
       when 'A'
-        ['A']
+        [['A']]
       when 'B'
         left_hand_corner = Array.new(2) { [' '] * 3 }
         ('A'..'B').each_with_index do |letter, index|
@@ -51,7 +51,7 @@ describe 'Generating a diamond' do
 
     context "given the letter 'A'" do
       it 'is correctly printed' do
-        expect(left_hand_corner 'A').to eq ['A']
+        expect(left_hand_corner 'A').to eq [['A']]
       end
     end
 
