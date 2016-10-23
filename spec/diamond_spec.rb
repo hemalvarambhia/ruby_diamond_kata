@@ -78,4 +78,10 @@ describe 'Generating a diamond' do
       end
     end
   end
+
+  describe 'the bottom left-hand corner' do
+    context 'given no letter' do
+      it 'prints nothing'
+    end
+  end
 end
