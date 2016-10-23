@@ -25,13 +25,13 @@ describe 'Generating a diamond' do
       
       range = 'A'..letter
       left_hand_corner =
-        Array.new(range.count) {  [' '] * (2 *range.count - 1) }
+        Array.new(range.count) {  [' '] * range.count }
 
       range.each_with_index do |letter, index|
         left_hand_corner[index][(range.count - 1) - index] = letter
       end
 
-      left_hand_corner.map { |row| row[0..range.count - 1] }
+      left_hand_corner
     end
 
     context 'given no letter' do
