@@ -31,7 +31,7 @@ describe 'Generating a diamond' do
         left_hand_corner[index][(range.count - 1) - index] = letter
       end
 
-      left_hand_corner
+      left_hand_corner.map { |row| row[0..range.count - 1] }
     end
 
     context 'given no letter' do
@@ -50,8 +50,8 @@ describe 'Generating a diamond' do
       it 'is printed correctly' do
         expect(left_hand_corner 'B').to(
           eq([
-               [' ', 'A', ' '],
-               ['B', ' ', ' ']
+               [' ', 'A'],
+               ['B', ' ']
              ]
             )
         )
@@ -62,9 +62,9 @@ describe 'Generating a diamond' do
       it 'is printed correctly' do
         expect(left_hand_corner 'C').to(
           eq([
-               [' ', ' ', 'A', ' ', ' '],
-               [' ', 'B', ' ', ' ', ' '],
-               ['C', ' ', ' ', ' ', ' ']
+               [' ', ' ', 'A'],
+               [' ', 'B', ' '],
+               ['C', ' ', ' ']
              ]
           )
         )
@@ -75,10 +75,10 @@ describe 'Generating a diamond' do
       it 'is printed correctly' do
         expect(left_hand_corner 'D').to(
           eq([
-               [' ', ' ', ' ', 'A', ' ', ' ', ' '],
-               [' ', ' ', 'B', ' ', ' ', ' ', ' '],
-               [' ', 'C', ' ', ' ', ' ', ' ', ' '],
-               ['D', ' ', ' ', ' ', ' ', ' ', ' ']
+               [' ', ' ', ' ', 'A'],
+               [' ', ' ', 'B', ' '],
+               [' ', 'C', ' ', ' '],
+               ['D', ' ', ' ', ' ']
              ]
           )
         )
