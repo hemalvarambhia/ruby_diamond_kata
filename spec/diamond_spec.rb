@@ -80,8 +80,14 @@ describe 'Generating a diamond' do
   end
 
   describe 'the bottom left-hand corner' do
+    def bottom_left_hand_corner letter
+      []
+    end
+    
     context 'given no letter' do
-      it 'prints nothing'
+      it 'prints nothing' do
+        expect(bottom_left_hand_corner '').to eq []
+      end
     end
 
     context "given the letter 'A'" do
