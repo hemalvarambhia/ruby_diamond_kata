@@ -42,46 +42,39 @@ describe 'Generating a diamond' do
 
     context "given the letter 'A'" do
       it 'is correctly printed' do
-        expect(left_hand_corner 'A').to eq [['A']]
+        left_hand_corner = left_hand_corner 'A'
+
+        expect(left_hand_corner[0]).to eq ['A']
       end
     end
 
     context "given the letter 'B'" do
       it 'is printed correctly' do
-        expect(left_hand_corner 'B').to(
-          eq([
-               [' ', 'A'],
-               ['B', ' ']
-             ]
-            )
-        )
+        left_hand_corner = left_hand_corner 'B'
+
+        expect(left_hand_corner[0]).to eq [' ', 'A']
+        expect(left_hand_corner[1]).to eq ['B', ' ']
       end
     end
 
     context "given the letter 'C'" do
       it 'is printed correctly' do
-        expect(left_hand_corner 'C').to(
-          eq([
-               [' ', ' ', 'A'],
-               [' ', 'B', ' '],
-               ['C', ' ', ' ']
-             ]
-          )
-        )
+        left_hand_corner = left_hand_corner 'C'
+
+        expect(left_hand_corner[0]).to eq [' ', ' ', 'A']
+        expect(left_hand_corner[1]).to eq [' ', 'B', ' ']
+        expect(left_hand_corner[2]).to eq ['C', ' ', ' ']
       end
     end
 
     context "given the letter 'D'" do
       it 'is printed correctly' do
-        expect(left_hand_corner 'D').to(
-          eq([
-               [' ', ' ', ' ', 'A'],
-               [' ', ' ', 'B', ' '],
-               [' ', 'C', ' ', ' '],
-               ['D', ' ', ' ', ' ']
-             ]
-          )
-        )
+        left_hand_corner = left_hand_corner 'D'
+
+        expect(left_hand_corner[0]).to eq [' ', ' ', ' ', 'A']
+        expect(left_hand_corner[1]).to eq [' ', ' ', 'B', ' ']
+        expect(left_hand_corner[2]).to eq [' ', 'C', ' ', ' ']
+        expect(left_hand_corner[3]).to eq ['D', ' ', ' ', ' ']
       end
     end
   end
