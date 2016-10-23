@@ -89,7 +89,12 @@ describe 'Generating a diamond' do
       when 'B'
         [['B', ' '], [' ', 'A']]
       when 'C'
-        [['C', ' ', ' '], [' ', 'B', ' '], [' ', ' ', 'A']]
+        bottom_left_hand_corner = Array.new(3) { [' '] * 3 }
+        ('A'..'C').each_with_index do |letter, index|
+          bottom_left_hand_corner[2 - index][2 - index] = letter
+        end
+
+        bottom_left_hand_corner
       end
     end
     
