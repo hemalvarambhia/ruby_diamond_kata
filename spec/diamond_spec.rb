@@ -85,26 +85,23 @@ describe 'Generating a diamond' do
       range = 'A'..letter
       bottom_left_hand_corner =
         Array.new(range.count) { ' ' * range.count }
+
       case letter
       when 'A'
         range.each_with_index do |letter, index|
           bottom_left_hand_corner[0 - index][0 - index] = letter
         end
-
-        bottom_left_hand_corner
       when 'B'
         range.each_with_index do |letter, index|
           bottom_left_hand_corner[1 - index][1 - index] = letter
         end
-
-        bottom_left_hand_corner
       when 'C'
         range.each_with_index do |letter, index|
           bottom_left_hand_corner[2 - index][2 - index] = letter
         end
-
-        bottom_left_hand_corner
       end
+
+      bottom_left_hand_corner
     end
     
     context 'given no letter' do
