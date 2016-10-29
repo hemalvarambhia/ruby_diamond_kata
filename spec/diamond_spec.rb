@@ -128,4 +128,10 @@ describe 'Generating a diamond' do
       end
     end
   end
+
+  describe 'the top right-hand corner' do
+    context "given no letter" do
+      it 'is printed correctly'
+    end
+  end
 end
