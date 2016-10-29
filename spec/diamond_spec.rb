@@ -14,17 +14,7 @@ describe 'Generating a diamond' do
   end
 
   def bottom_left_hand_corner letter
-    return [] if letter == ''
-    range = 'A'..letter
-    bottom_left_hand_corner =
-      Array.new(range.count) { ' ' * range.count }
-
-    size = range.count
-    range.each_with_index do |letter, index|
-      bottom_left_hand_corner[size - 1 - index][size - 1 - index] = letter
-    end
-
-    bottom_left_hand_corner
+    left_hand_corner(letter).reverse
   end
   
   context 'when no letter is given' do
