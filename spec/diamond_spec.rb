@@ -83,7 +83,8 @@ describe 'Generating a diamond' do
     def bottom_left_hand_corner letter
       return [] if letter == ''
       range = 'A'..letter
-      bottom_left_hand_corner = Array.new(range.count) { ' ' * range.count }
+      bottom_left_hand_corner =
+        Array.new(range.count) { ' ' * range.count }
       case letter
       when 'A'
         range.each_with_index do |letter, index|
