@@ -81,21 +81,20 @@ describe 'Generating a diamond' do
 
   describe 'the bottom left-hand corner' do
     def bottom_left_hand_corner letter
+      return [] if letter == ''
+      range = 'A'..letter
+      bottom_left_hand_corner = Array.new(range.count) { ' ' * range.count }
       case letter
-      when ''
-        []
       when 'A'
         ['A']
       when 'B'
-        bottom_left_hand_corner = Array.new(2) { ' ' * 2 }
-        ('A'..'B').each_with_index do |letter, index|
+        range.each_with_index do |letter, index|
           bottom_left_hand_corner[1 - index][1 - index] = letter
         end
 
         bottom_left_hand_corner
       when 'C'
-        bottom_left_hand_corner = Array.new(3) { ' ' * 3 }
-        ('A'..'C').each_with_index do |letter, index|
+        range.each_with_index do |letter, index|
           bottom_left_hand_corner[2 - index][2 - index] = letter
         end
 
@@ -134,6 +133,10 @@ describe 'Generating a diamond' do
         expect(bottom_left_hand_corner[1]).to eq ' B '
         expect(bottom_left_hand_corner[2]).to eq '  A'        
       end
+    end
+
+    context "given the letter 'D'" do
+      it 'is printed correctly'
     end
   end
 end
