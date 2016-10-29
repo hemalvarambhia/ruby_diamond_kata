@@ -1,4 +1,32 @@
 describe 'Generating a diamond' do
+  def left_hand_corner letter
+    return [] if letter.empty?
+     
+    range = 'A'..letter
+    left_hand_corner =
+      Array.new(range.count) {  ' ' * range.count }
+
+    range.each_with_index do |letter, index|
+      left_hand_corner[index][(range.count - 1) - index] = letter
+    end
+
+    left_hand_corner
+  end
+
+  def bottom_left_hand_corner letter
+    return [] if letter == ''
+    range = 'A'..letter
+    bottom_left_hand_corner =
+      Array.new(range.count) { ' ' * range.count }
+
+    size = range.count
+    range.each_with_index do |letter, index|
+      bottom_left_hand_corner[size - 1 - index][size - 1 - index] = letter
+    end
+
+    bottom_left_hand_corner
+  end
+  
   context 'when no letter is given' do
     def diamond letter
       ''
@@ -20,20 +48,6 @@ describe 'Generating a diamond' do
   end
 
   describe 'the left-hand corner' do
-    def left_hand_corner letter
-      return [] if letter.empty?
-      
-      range = 'A'..letter
-      left_hand_corner =
-        Array.new(range.count) {  ' ' * range.count }
-
-      range.each_with_index do |letter, index|
-        left_hand_corner[index][(range.count - 1) - index] = letter
-      end
-
-      left_hand_corner
-    end
-
     context 'given no letter' do
       it 'prints no left-hand corner' do
         expect(left_hand_corner '').to eq []
@@ -80,20 +94,6 @@ describe 'Generating a diamond' do
   end
 
   describe 'the bottom left-hand corner' do
-    def bottom_left_hand_corner letter
-      return [] if letter == ''
-      range = 'A'..letter
-      bottom_left_hand_corner =
-        Array.new(range.count) { ' ' * range.count }
-
-      size = range.count
-      range.each_with_index do |letter, index|
-        bottom_left_hand_corner[size - 1 - index][size - 1 - index] = letter
-      end
-
-      bottom_left_hand_corner
-    end
-    
     context 'given no letter' do
       it 'prints nothing' do
         expect(bottom_left_hand_corner '').to eq []
