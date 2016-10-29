@@ -133,5 +133,9 @@ describe 'Generating a diamond' do
     context "given no letter" do
       it 'is printed correctly'
     end
+
+    context "given the letter 'A'" do
+      it 'is printed correctly'
+    end
   end
 end
