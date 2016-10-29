@@ -87,19 +87,8 @@ describe 'Generating a diamond' do
         Array.new(range.count) { ' ' * range.count }
 
       size = range.count
-      case letter
-      when 'A'
-        range.each_with_index do |letter, index|
-          bottom_left_hand_corner[size - 1 - index][size - 1 - index] = letter
-        end
-      when 'B'
-        range.each_with_index do |letter, index|
-          bottom_left_hand_corner[size - 1 - index][size - 1 - index] = letter
-        end
-      when 'C'
-        range.each_with_index do |letter, index|
-          bottom_left_hand_corner[size - 1 - index][size -1 - index] = letter
-        end
+      range.each_with_index do |letter, index|
+        bottom_left_hand_corner[size - 1 - index][size - 1 - index] = letter
       end
 
       bottom_left_hand_corner
