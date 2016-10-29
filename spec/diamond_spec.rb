@@ -85,16 +85,16 @@ describe 'Generating a diamond' do
       when ''
         []
       when 'A'
-        [['A']]
+        ['A']
       when 'B'
-        bottom_left_hand_corner = Array.new(2) { [' '] * 2 }
+        bottom_left_hand_corner = Array.new(2) { ' ' * 2 }
         ('A'..'B').each_with_index do |letter, index|
           bottom_left_hand_corner[1 - index][1 - index] = letter
         end
 
         bottom_left_hand_corner
       when 'C'
-        bottom_left_hand_corner = Array.new(3) { [' '] * 3 }
+        bottom_left_hand_corner = Array.new(3) { ' ' * 3 }
         ('A'..'C').each_with_index do |letter, index|
           bottom_left_hand_corner[2 - index][2 - index] = letter
         end
@@ -113,7 +113,7 @@ describe 'Generating a diamond' do
       it 'is printed correctly' do
         bottom_left_hand_corner = bottom_left_hand_corner 'A'
 
-        expect(bottom_left_hand_corner[0]).to eq ['A']
+        expect(bottom_left_hand_corner[0]).to eq 'A'
       end
     end
 
@@ -121,8 +121,8 @@ describe 'Generating a diamond' do
       it 'is printed correctly' do
         bottom_left_hand_corner = bottom_left_hand_corner 'B'
         
-        expect(bottom_left_hand_corner[0]).to eq ['B', ' ']
-        expect(bottom_left_hand_corner[1]).to eq [' ', 'A']
+        expect(bottom_left_hand_corner[0]).to eq 'B '
+        expect(bottom_left_hand_corner[1]).to eq ' A'
       end
     end
 
@@ -130,9 +130,9 @@ describe 'Generating a diamond' do
       it 'is printed correctly' do
         bottom_left_hand_corner = bottom_left_hand_corner 'C'
         
-        expect(bottom_left_hand_corner[0]).to eq ['C', ' ', ' ' ]
-        expect(bottom_left_hand_corner[1]).to eq [' ', 'B', ' ' ]
-        expect(bottom_left_hand_corner[2]).to eq [' ', ' ', 'A' ]        
+        expect(bottom_left_hand_corner[0]).to eq 'C  '
+        expect(bottom_left_hand_corner[1]).to eq ' B '
+        expect(bottom_left_hand_corner[2]).to eq '  A'        
       end
     end
   end
