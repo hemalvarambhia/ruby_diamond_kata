@@ -128,7 +128,14 @@ describe 'Generating a diamond' do
     end
 
     context "given the letter 'D'" do
-      it 'is printed correctly'
+      it 'is printed correctly' do
+        bottom_left_hand_corner = bottom_left_hand_corner 'D'
+
+        expect(bottom_left_hand_corner[0]).to eq 'D   '
+        expect(bottom_left_hand_corner[1]).to eq ' C  '
+        expect(bottom_left_hand_corner[2]).to eq '  B '
+        expect(bottom_left_hand_corner[3]).to eq '   A'        
+      end
     end
   end
 end
