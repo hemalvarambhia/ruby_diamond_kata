@@ -138,8 +138,9 @@ describe 'Generating a diamond' do
         ['A']
       when 'B'
         top_right_hand_corner = Array.new(2) { ' ' * 2}
-        top_right_hand_corner[0][0] = 'A'
-        top_right_hand_corner[1][1] = 'B'
+        ('A'..'B').each_with_index do |letter, index|
+          top_right_hand_corner[index][index] = letter
+        end
 
         top_right_hand_corner
       when 'C'
