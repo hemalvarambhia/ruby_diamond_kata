@@ -131,14 +131,7 @@ describe 'Generating a diamond' do
 
   describe 'the top right-hand corner' do
     def top_right_hand_corner letter
-      return [] if letter.empty?
-      range = 'A'..letter
-      top_right_hand_corner = Array.new(range.count) { ' ' * range.count }
-      range.each_with_index do |letter, index|
-        top_right_hand_corner[index][index] = letter
-      end        
-      
-      top_right_hand_corner
+      left_hand_corner(letter).map { |row| row.reverse }
     end
     
     context "given no letter" do
