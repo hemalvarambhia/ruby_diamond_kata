@@ -136,6 +136,8 @@ describe 'Generating a diamond' do
         []
       when 'A'
         ['A']
+      when 'B'
+        [ 'A ', ' B' ]
       end
     end
     
@@ -154,7 +156,12 @@ describe 'Generating a diamond' do
     end
 
     context "given the letter 'B'" do
-      it 'is printed correctly'
+      it 'is printed correctly' do
+        top_right_hand_corner = top_right_hand_corner 'B'
+        
+        expect(top_right_hand_corner[0]).to eq 'A '
+        expect(top_right_hand_corner[1]).to eq ' B'
+      end
     end
 
     context "given the letter 'C'" do
