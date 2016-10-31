@@ -131,7 +131,12 @@ describe 'Generating a diamond' do
 
   describe 'the top right-hand corner' do
     def top_right_hand_corner letter
-      []
+      case letter
+      when ''
+        []
+      when 'A'
+        ['A']
+      end
     end
     
     context "given no letter" do
@@ -141,7 +146,11 @@ describe 'Generating a diamond' do
     end
 
     context "given the letter 'A'" do
-      it 'is printed correctly'
+      it 'is printed correctly' do
+        top_right_hand_corner = top_right_hand_corner 'A'
+        
+        expect(top_right_hand_corner[0]).to eq 'A'
+      end
     end
 
     context "given the letter 'B'" do
