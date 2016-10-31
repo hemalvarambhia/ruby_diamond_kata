@@ -131,9 +131,9 @@ describe 'Generating a diamond' do
 
   describe 'the top right-hand corner' do
     def top_right_hand_corner letter
+      return [] if letter.empty?
+      
       case letter
-      when ''
-        []
       when 'A'
         top_right_hand_corner = Array.new(1) { ' ' * 1 }
         ('A'..'A').each_with_index do |letter, index|
