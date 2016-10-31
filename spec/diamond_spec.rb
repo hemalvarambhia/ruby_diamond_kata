@@ -137,7 +137,11 @@ describe 'Generating a diamond' do
       when 'A'
         ['A']
       when 'B'
-        [ 'A ', ' B' ]
+        top_right_hand_corner = Array.new(2) { ' ' * 2}
+        top_right_hand_corner[0][0] = 'A'
+        top_right_hand_corner[1][1] = 'B'
+
+        top_right_hand_corner
       when 'C'
         [ 'A  ', ' B ', '  C' ]
       end
