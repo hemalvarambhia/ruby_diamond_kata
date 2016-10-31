@@ -13,6 +13,10 @@ describe 'Generating a diamond' do
     left_hand_corner
   end
 
+  def top_right_hand_corner letter
+    left_hand_corner(letter).map { |row| row.reverse }
+  end
+
   def bottom_left_hand_corner letter
     left_hand_corner(letter).reverse
   end
@@ -130,10 +134,6 @@ describe 'Generating a diamond' do
   end
 
   describe 'the top right-hand corner' do
-    def top_right_hand_corner letter
-      left_hand_corner(letter).map { |row| row.reverse }
-    end
-    
     context "given no letter" do
       it 'is printed correctly' do
         expect(top_right_hand_corner '').to be_empty
