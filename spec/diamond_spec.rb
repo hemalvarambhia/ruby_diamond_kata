@@ -130,8 +130,14 @@ describe 'Generating a diamond' do
   end
 
   describe 'the top right-hand corner' do
+    def top_right_hand_corner letter
+      []
+    end
+    
     context "given no letter" do
-      it 'is printed correctly'
+      it 'is printed correctly' do
+        expect(top_right_hand_corner '').to be_empty
+      end
     end
 
     context "given the letter 'A'" do
