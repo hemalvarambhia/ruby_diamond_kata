@@ -147,6 +147,10 @@ describe 'Generating a diamond' do
         range.each_with_index do |letter, index|
           top_right_hand_corner[index][index] = letter
         end
+      else
+        range.each_with_index do |letter, index|
+          top_right_hand_corner[index][index] = letter
+        end        
       end
       
       top_right_hand_corner
@@ -182,6 +186,17 @@ describe 'Generating a diamond' do
         expect(top_right_hand_corner[0]).to eq 'A  '
         expect(top_right_hand_corner[1]).to eq ' B '
         expect(top_right_hand_corner[2]).to eq '  C'
+      end
+    end
+
+    context "given the letter 'D'" do
+      it 'is printed correctly' do
+        top_right_hand_corner = top_right_hand_corner 'D'
+        
+        expect(top_right_hand_corner[0]).to eq 'A   '
+        expect(top_right_hand_corner[1]).to eq ' B  '
+        expect(top_right_hand_corner[2]).to eq '  C '
+        expect(top_right_hand_corner[3]).to eq '   D'
       end
     end
   end
