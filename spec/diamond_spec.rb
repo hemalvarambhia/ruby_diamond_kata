@@ -17,10 +17,6 @@ describe 'Generating a diamond' do
     top_left_hand_corner(letter).map { |row| row.reverse }
   end
 
-  def bottom_left_hand_corner letter
-    top_left_hand_corner(letter).reverse
-  end
-  
   context 'when no letter is given' do
     def diamond letter
       ''
@@ -83,52 +79,6 @@ describe 'Generating a diamond' do
         expect(top_left_hand_corner[1]).to eq '  B '
         expect(top_left_hand_corner[2]).to eq ' C  '
         expect(top_left_hand_corner[3]).to eq 'D   '
-      end
-    end
-  end
-
-  describe 'the bottom left-hand corner' do
-    context 'given no letter' do
-      it 'prints nothing' do
-        expect(bottom_left_hand_corner '').to eq []
-      end
-    end
-
-    context "given the letter 'A'" do
-      it 'is printed correctly' do
-        bottom_left_hand_corner = bottom_left_hand_corner 'A'
-
-        expect(bottom_left_hand_corner[0]).to eq 'A'
-      end
-    end
-
-    context "given the letter 'B'" do
-      it 'is printed correctly' do
-        bottom_left_hand_corner = bottom_left_hand_corner 'B'
-        
-        expect(bottom_left_hand_corner[0]).to eq 'B '
-        expect(bottom_left_hand_corner[1]).to eq ' A'
-      end
-    end
-
-    context "given the letter 'C'" do
-      it 'is printed correctly' do
-        bottom_left_hand_corner = bottom_left_hand_corner 'C'
-        
-        expect(bottom_left_hand_corner[0]).to eq 'C  '
-        expect(bottom_left_hand_corner[1]).to eq ' B '
-        expect(bottom_left_hand_corner[2]).to eq '  A'        
-      end
-    end
-
-    context "given the letter 'D'" do
-      it 'is printed correctly' do
-        bottom_left_hand_corner = bottom_left_hand_corner 'D'
-
-        expect(bottom_left_hand_corner[0]).to eq 'D   '
-        expect(bottom_left_hand_corner[1]).to eq ' C  '
-        expect(bottom_left_hand_corner[2]).to eq '  B '
-        expect(bottom_left_hand_corner[3]).to eq '   A'        
       end
     end
   end
