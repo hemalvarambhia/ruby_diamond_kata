@@ -130,21 +130,22 @@ describe 'Generating a diamond' do
   end
 
   describe 'the upper-half' do
-    context 'given no letter' do
-      def upper_half letter
+    def upper_half letter
+      case letter
+      when ''
         []
+      when 'A'
+        ['A'] 
       end
+    end
 
+    context 'given no letter' do
       it 'is printed correctly' do
         expect(upper_half '').to be_empty
       end
     end
 
     context "given the letter 'A'" do
-      def upper_half letter
-        ['A']       
-      end
-
       it 'is printed correctly' do
         expect(upper_half('A')[0]).to eq 'A'
       end
