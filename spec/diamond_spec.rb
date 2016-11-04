@@ -138,8 +138,8 @@ describe 'Generating a diamond' do
         ['A'] 
       when 'B'
         [ 
-          ' A ', 
-          'B B'
+          top_left_hand_corner('B')[0] + top_right_hand_corner('B')[0][1..-1],
+          top_left_hand_corner('B')[1] + top_right_hand_corner('B')[1][1..-1]
         ]
       when 'C'
         [
