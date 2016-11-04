@@ -141,7 +141,13 @@ describe 'Generating a diamond' do
     end
 
     context "given the letter 'A'" do
-      it 'is printed correctly'
+      def upper_half letter
+        ['A']       
+      end
+
+      it 'is printed correctly' do
+        expect(upper_half('A')[0]).to eq 'A'
+      end
     end
 
     context "given the letter 'B'" do
