@@ -135,7 +135,7 @@ describe 'Generating a diamond' do
       when ''
         []
       when 'A'
-        ['A'] 
+        [ top_left_hand_corner('A')[0] + top_right_hand_corner('A')[0][1..-1] ]
       when 'B'
         [ 
           top_left_hand_corner('B')[0] + top_right_hand_corner('B')[0][1..-1],
