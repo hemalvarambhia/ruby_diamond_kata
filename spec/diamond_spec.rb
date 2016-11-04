@@ -131,9 +131,8 @@ describe 'Generating a diamond' do
 
   describe 'the upper-half' do
     def upper_half letter
+      return [] if letter == ''
       case letter
-      when ''
-        []
       when 'A'
         [ top_left_hand_corner('A')[0] + top_right_hand_corner('A')[0][1..-1] ]
       when 'B'
