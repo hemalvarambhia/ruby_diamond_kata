@@ -138,7 +138,7 @@ describe 'Generating a diamond' do
         ['A'] 
       when 'B'
         [ 
-           'A', 
+          ' A ', 
           'B B'
         ]
       end
@@ -158,7 +158,7 @@ describe 'Generating a diamond' do
 
     context "given the letter 'B'" do
       it 'is printed correctly' do
-        expect(upper_half('B')[0]).to eq  'A'
+        expect(upper_half('B')[0]).to eq ' A '
         expect(upper_half('B')[1]).to eq 'B B'
       end
     end
