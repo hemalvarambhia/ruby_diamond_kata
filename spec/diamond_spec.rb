@@ -143,9 +143,9 @@ describe 'Generating a diamond' do
         ]
       when 'C'
         [
-	  '  A  ',
-          ' B B ',
-          'C   C'
+	  top_left_hand_corner('C')[0] + '  ',
+          top_left_hand_corner('C')[1] + 'B ',
+          top_left_hand_corner('C')[2] + ' C'
         ]
       end
     end
