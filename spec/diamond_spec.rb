@@ -141,6 +141,12 @@ describe 'Generating a diamond' do
           ' A ', 
           'B B'
         ]
+      when 'C'
+        [
+	  '  A  ',
+          ' B B ',
+          'C   C'
+        ]
       end
     end
 
@@ -164,7 +170,11 @@ describe 'Generating a diamond' do
     end
 
     context "given the letter 'C'" do
-      it 'is printed correctly'
+      it 'is printed correctly' do
+        expect(upper_half('C')[0]).to eq '  A  '
+        expect(upper_half('C')[1]).to eq ' B B '
+        expect(upper_half('C')[2]).to eq 'C   C'
+      end
     end
   end
 end
