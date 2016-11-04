@@ -141,11 +141,10 @@ describe 'Generating a diamond' do
           top_left_hand_corner('B')[1] + top_right_hand_corner('B')[1][1..-1]
         ]
       when 'C'
-        [
-	  top_left_hand_corner('C')[0] + top_right_hand_corner('C')[0][1..-1],
-          top_left_hand_corner('C')[1] + top_right_hand_corner('C')[1][1..-1],
-          top_left_hand_corner('C')[2] + top_right_hand_corner('C')[2][1..-1]
-        ]
+        (0..2).map do |index|
+	  top_left_hand_corner(letter)[index] + 
+            top_right_hand_corner(letter)[index][1..-1]	   
+        end
       end
     end
 
