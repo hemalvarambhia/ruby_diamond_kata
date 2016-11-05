@@ -132,23 +132,12 @@ describe 'Generating a diamond' do
   describe 'the upper-half' do
     def upper_half letter
       return [] if letter == ''
-      case letter
-      when 'A'
-        (0..0).map do |index|
-          top_left_hand_corner(letter)[0] +
-            top_right_hand_corner(letter)[0][1..-1]
-        end
-      when 'B'
-        (0..1).map do |index|
-	  top_left_hand_corner(letter)[index] +
-            top_right_hand_corner(letter)[index][1..-1]
-        end
-      when 'C'
-        (0..2).map do |index|
-	  top_left_hand_corner(letter)[index] + 
-            top_right_hand_corner(letter)[index][1..-1]	   
-        end
-      end
+      finish = ('A'..'C').to_a.index letter
+
+      (0..finish).map do |index|
+         top_left_hand_corner(letter)[index] +
+           top_right_hand_corner(letter)[index][1..-1]
+       end
     end
 
     context 'given no letter' do
