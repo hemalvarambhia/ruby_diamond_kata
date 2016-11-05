@@ -30,6 +30,13 @@ describe 'Generating a diamond' do
   def lower_half letter
     upper_half(letter).reverse
   end
+
+  def diamond letter
+    return '' if letter == ''
+      
+    upper_half(letter).join("\n") + "\n" +
+      lower_half(letter)[1..-1].join("\n")
+  end
   
   describe 'the left-hand corner' do
     context 'given no letter' do
@@ -189,13 +196,6 @@ describe 'Generating a diamond' do
   end
 
   describe 'printing the diamond' do
-    def diamond letter
-      return '' if letter == ''
-      
-      upper_half(letter).join("\n") + "\n" +
-        lower_half(letter)[1..-1].join("\n")
-    end
-
     context 'when no letter is given' do
        it 'prints no diamond' do
         expect(diamond '').to eq ''
