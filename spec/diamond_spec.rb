@@ -208,7 +208,7 @@ describe 'Generating a diamond' do
       end
     end
 
-    context "given the letter C" do
+    context "given the letter 'C'" do
       it 'should be printed correctly' do 
        expect(diamond 'C').to(
          eq(
@@ -217,6 +217,21 @@ describe 'Generating a diamond' do
            "C   C\n" +
            " B B \n" +
            "  A  "
+         ))
+      end
+    end
+
+    context "given the letter 'D'" do
+      it 'should be printed correctly' do 
+       expect(diamond 'D').to(
+         eq(
+           "   A   \n" +   
+           "  B B  \n" +
+           " C   C \n" +
+           "D     D\n" +
+           " C   C \n" +
+           "  B B  \n" +
+           "   A   "
          ))
       end
     end
