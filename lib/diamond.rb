@@ -1,5 +1,5 @@
 def top_left_hand_corner letter
-  return [] if letter.empty?
+  return [] if letter == ''
      
   range = 'A'..letter
   top_left_hand_corner =
