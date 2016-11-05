@@ -167,13 +167,13 @@ describe 'Generating a diamond' do
       end
     end
 
-      context "given the letter 'E'" do
-        it 'is printed correctly' do
-          expect(upper_half('E')[0]).to eq   '    A    '
-          expect(upper_half('E')[1]).to eq   '   B B   '
-          expect(upper_half('E')[2]).to eq   '  C   C  '
-          expect(upper_half('E')[3]).to eq   ' D     D '
-          expect(upper_half('E')[4]).to eq   'E       E'
+    context "given the letter 'E'" do
+      it 'is printed correctly' do
+        expect(upper_half('E')[0]).to eq   '    A    '
+        expect(upper_half('E')[1]).to eq   '   B B   '
+        expect(upper_half('E')[2]).to eq   '  C   C  '
+        expect(upper_half('E')[3]).to eq   ' D     D '
+        expect(upper_half('E')[4]).to eq   'E       E'
       end
     end
   end
