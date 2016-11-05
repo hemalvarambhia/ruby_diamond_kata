@@ -189,32 +189,26 @@ describe 'Generating a diamond' do
   end
 
   describe 'printing the diamond' do
-    context 'when no letter is given' do
-      def diamond letter
-        ''
-      end
+    def diamond letter
+      return '' if letter == ''
+      
+      upper_half(letter).join("\n") + "\n" +
+        lower_half(letter)[1..-1].join("\n")
+    end
 
-      it 'prints no diamond' do
+    context 'when no letter is given' do
+       it 'prints no diamond' do
         expect(diamond '').to eq ''
       end
     end
 
     context "given the letter 'A'" do
-      def diamond letter
-        'A'
-      end
-
       it 'prints the diamond correctly' do
-        expect(diamond 'A').to eq 'A'
+        expect(diamond 'A').to eq "A\n"
       end
     end
 
     context "given the letter C" do
-      def diamond letter
-        upper_half(letter).join("\n") + "\n" +
-          lower_half(letter)[1..-1].join("\n")
-      end
-      
       it 'should be printed correctly' do 
        expect(diamond 'C').to(
          eq(
