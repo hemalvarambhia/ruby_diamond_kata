@@ -132,9 +132,9 @@ describe 'Generating a diamond' do
   describe 'the upper-half' do
     def upper_half letter
       return [] if letter == ''
-      finish = ('A'..'C').to_a.index letter
+      finish = ('A'..'Z').to_a.index letter
 
-      (0..finish).map do |index|
+      (0.upto finish).map do |index|
          top_left_hand_corner(letter)[index] +
            top_right_hand_corner(letter)[index][1..-1]
        end
@@ -164,6 +164,16 @@ describe 'Generating a diamond' do
         expect(upper_half('C')[0]).to eq '  A  '
         expect(upper_half('C')[1]).to eq ' B B '
         expect(upper_half('C')[2]).to eq 'C   C'
+      end
+    end
+
+      context "given the letter 'E'" do
+        it 'is printed correctly' do
+          expect(upper_half('E')[0]).to eq   '    A    '
+          expect(upper_half('E')[1]).to eq   '   B B   '
+          expect(upper_half('E')[2]).to eq   '  C   C  '
+          expect(upper_half('E')[3]).to eq   ' D     D '
+          expect(upper_half('E')[4]).to eq   'E       E'
       end
     end
   end
