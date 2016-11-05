@@ -30,27 +30,7 @@ describe 'Generating a diamond' do
   def lower_half letter
     upper_half(letter).reverse
   end
-
-  context 'when no letter is given' do
-    def diamond letter
-      ''
-    end
-
-    it 'prints no diamond' do
-      expect(diamond '').to eq ''
-    end
-  end
-
-  context "given the letter 'A'" do
-    def diamond letter
-      'A'
-    end
-
-    it 'prints the diamond correctly' do
-      expect(diamond 'A').to eq 'A'
-    end
-  end
-
+  
   describe 'the left-hand corner' do
     context 'given no letter' do
       it 'prints no left-hand corner' do
@@ -204,6 +184,28 @@ describe 'Generating a diamond' do
         expect(lower_half[1]).to eq ' C   C '
         expect(lower_half[2]).to eq '  B B  '
         expect(lower_half[3]).to eq '   A   '
+      end
+    end
+  end
+
+  describe 'printing the diamond' do
+    context 'when no letter is given' do
+      def diamond letter
+        ''
+      end
+
+      it 'prints no diamond' do
+        expect(diamond '').to eq ''
+      end
+    end
+
+    context "given the letter 'A'" do
+      def diamond letter
+        'A'
+      end
+
+      it 'prints the diamond correctly' do
+        expect(diamond 'A').to eq 'A'
       end
     end
   end
