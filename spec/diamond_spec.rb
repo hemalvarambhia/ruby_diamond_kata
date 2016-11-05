@@ -27,8 +27,6 @@ describe 'Generating a diamond' do
      end
   end
 
-
-
   context 'when no letter is given' do
     def diamond letter
       ''
