@@ -27,6 +27,10 @@ describe 'Generating a diamond' do
      end
   end
 
+  def lower_half letter
+    upper_half(letter).reverse
+  end
+
   context 'when no letter is given' do
     def diamond letter
       ''
@@ -183,10 +187,6 @@ describe 'Generating a diamond' do
   end
 
   describe 'the lower-half' do
-    def lower_half letter
-      upper_half(letter).reverse
-    end
-    
     context "given the letter 'C'" do
       it 'is printed correctly' do
         lower_half = lower_half 'C'
