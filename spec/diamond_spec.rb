@@ -181,4 +181,14 @@ describe 'Generating a diamond' do
       end
     end
   end
+
+  describe 'the lower-half' do
+    context "given the letter 'C'" do
+      it 'is printed correctly'
+    end
+
+    context "given the letter 'D'" do
+      it 'is printed correctly'
+    end
+  end
 end
