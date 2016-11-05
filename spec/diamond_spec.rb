@@ -17,6 +17,18 @@ describe 'Generating a diamond' do
     top_left_hand_corner(letter).map { |row| row.reverse }
   end
 
+  def upper_half letter
+    return [] if letter == ''
+    finish = ('A'..'Z').to_a.index letter
+
+    (0.upto finish).map do |index|
+       top_left_hand_corner(letter)[index] +
+         top_right_hand_corner(letter)[index][1..-1]
+     end
+  end
+
+
+
   context 'when no letter is given' do
     def diamond letter
       ''
@@ -130,16 +142,6 @@ describe 'Generating a diamond' do
   end
 
   describe 'the upper-half' do
-    def upper_half letter
-      return [] if letter == ''
-      finish = ('A'..'Z').to_a.index letter
-
-      (0.upto finish).map do |index|
-         top_left_hand_corner(letter)[index] +
-           top_right_hand_corner(letter)[index][1..-1]
-       end
-    end
-
     context 'given no letter' do
       it 'is printed correctly' do
         expect(upper_half '').to be_empty
