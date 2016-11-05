@@ -134,7 +134,10 @@ describe 'Generating a diamond' do
       return [] if letter == ''
       case letter
       when 'A'
-        [ top_left_hand_corner('A')[0] + top_right_hand_corner('A')[0][1..-1] ]
+        (0..0).map do |index|
+          top_left_hand_corner(letter)[0] +
+            top_right_hand_corner(letter)[0][1..-1]
+        end
       when 'B'
         (0..1).map do |index|
 	  top_left_hand_corner(letter)[index] +
