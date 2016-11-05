@@ -208,5 +208,23 @@ describe 'Generating a diamond' do
         expect(diamond 'A').to eq 'A'
       end
     end
+
+    context "given the letter C" do
+      def diamond letter
+        upper_half(letter).join("\n") + "\n" +
+          lower_half(letter)[1..-1].join("\n")
+      end
+      
+      it 'should be printed correctly' do 
+       expect(diamond 'C').to(
+         eq(
+           "  A  \n" +   
+           " B B \n" +
+           "C   C\n" +
+           " B B \n" +
+           "  A  "
+         ))
+      end
+    end
   end
 end
