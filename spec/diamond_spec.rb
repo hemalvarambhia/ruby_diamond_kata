@@ -183,12 +183,28 @@ describe 'Generating a diamond' do
   end
 
   describe 'the lower-half' do
+    def lower_half letter
+      upper_half(letter).reverse
+    end
+    
     context "given the letter 'C'" do
-      it 'is printed correctly'
+      it 'is printed correctly' do
+        lower_half = lower_half 'C'
+        
+        expect(lower_half[0]).to eq 'C   C'
+        expect(lower_half[1]).to eq ' B B '
+        expect(lower_half[2]).to eq '  A  '
+      end
     end
 
     context "given the letter 'D'" do
-      it 'is printed correctly'
+      it 'is printed correctly' do
+        lower_half = lower_half 'D'
+        expect(lower_half[0]).to eq 'D     D'
+        expect(lower_half[1]).to eq ' C   C '
+        expect(lower_half[2]).to eq '  B B  '
+        expect(lower_half[3]).to eq '   A   '
+      end
     end
   end
 end
